@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="m-1 border-34 border-gray-900">
+        <h1>User Data</h1>
+        <form action="/add-user" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <button type="submit">Add User</button>
+        </form>
+    </section>
+    <section>
+        <h2>Users List</h2>
+        <ul id="user-list">
+            <% users.forEach(user=> { %>
+                <li>
+                    <%= user.name %> - <%= user.age %> years old
+                </li>
+                <% }); %>
+        </ul>
+    </section>
+
+
+</body>
+
+</html>
